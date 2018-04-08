@@ -35,7 +35,7 @@ CREATE TABLE [Na_tiketu]
 	CONSTRAINT [ishod_30837925]
 		CHECK  ( [Odigrano]='1' OR [Odigrano]='2' OR [Odigrano]='X' ),
 	[IDUtakmice]         integer  NOT NULL ,
-	CONSTRAINT [XPKNa_tiketu] PRIMARY KEY  CLUSTERED ([IDTiket] ASC)
+	CONSTRAINT [XPKNa_tiketu] PRIMARY KEY  CLUSTERED ([IDTiket] ASC,[IDUtakmice] ASC)
 )
 go
 
@@ -112,7 +112,7 @@ ALTER TABLE [Na_tiketu]
 go
 
 ALTER TABLE [Na_tiketu]
-	ADD CONSTRAINT [R_13] FOREIGN KEY ([IDUtakmice]) REFERENCES [Utakmice]([IDUtakmice])
+	ADD CONSTRAINT [R_14] FOREIGN KEY ([IDUtakmice]) REFERENCES [Utakmice]([IDUtakmice])
 		ON DELETE NO ACTION
 		ON UPDATE NO ACTION
 go
